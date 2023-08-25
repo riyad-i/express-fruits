@@ -13,8 +13,10 @@ app.get('/', (req, res) =>{
 
 
 /**
- * @path 
- * 
+ * @path /fruits
+ * @method GET
+ * @action index
+ * @description returns a list of fruits
  */
 //action :index
 app.get('/fruits', (req, res)=>{
@@ -23,6 +25,13 @@ app.get('/fruits', (req, res)=>{
 
 
 //show
+/**
+ * @path /fruits/indexOfFruitArray
+ * @param /:indexOfFruitArray
+ * @method GET
+ * @action show 
+ * @description return a single fruit
+ */
 app.get('/fruits/:indexOfFruitsArray', (req, res)=>{
     const index = req.params.indexOfFruitsArray
     res.send(fruits[index])
