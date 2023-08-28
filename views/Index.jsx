@@ -4,7 +4,6 @@ const React = require('react')
 
 function Index(props){
     const {fruits} = props
-    console.log(fruits)
     return(
         <main>
             <h1>Index Page</h1>
