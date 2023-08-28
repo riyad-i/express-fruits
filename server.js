@@ -8,16 +8,21 @@ const fruits = require('./models/fruits')
 
 const jsxEngine = require('jsx-view-engine')
 
+//app config
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
 
+
+
+
+//middleware
 app.use((req, res, next)=> {
     console.log(req.method, req.url)
     next()
 })
 
 
-
+app.use(express.urlencoded({extended:false}))
 
 
 
@@ -65,6 +70,7 @@ app.get('/fruits/new', (req, res)=> {
  */
 
 app.post('/fruits', (req, res)=>{
+    console.log(req.body)
     res.send("Got some data!")
 })
 
