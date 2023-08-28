@@ -6,6 +6,9 @@ function Index(props){
     const {fruits} = props
     return(
         <main>
+            <nav>
+                <a href='/fruits/new'>Create Fruit</a>
+            </nav>
             <h1>Index Page</h1>
             <ul>
                 {fruits.map((fruit, i) => {
