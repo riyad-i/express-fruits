@@ -6,6 +6,10 @@ const PORT = 3000
 
 const fruits = require('./models/fruits')
 
+const jsxEngine = require('jsx-view-engine')
+
+app.set('view engine', 'jsx')
+app.engine('jsx', jsxEngine())
 
 app.get('/', (req, res) =>{
     res.send(fruits)
@@ -33,8 +37,9 @@ app.get('/fruits', (req, res)=>{
  * @description return a single fruit
  */
 app.get('/fruits/:indexOfFruitsArray', (req, res)=>{
-    const index = req.params.indexOfFruitsArray
-    res.send(fruits[index])
+    // const index = req.params.indexOfFruitsArray
+    // res.send(fruits[index])
+    res.render('Show')
 })
 
 
