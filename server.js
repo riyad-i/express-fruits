@@ -12,7 +12,7 @@ app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
 
 app.use((req, res, next)=> {
-    console.log('I run for all routes')
+    console.log(req.method, req.url)
     next()
 })
 

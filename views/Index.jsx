@@ -12,7 +12,7 @@ function Index(props){
                     return(
                         <li>
                             The {''}
-                            <a href={`./fruits/${i}`}>
+                            <a href={`/fruits/${i}`}>
                                 {fruit.name}
                             </a>
                             {' '} is {fruit.color}
