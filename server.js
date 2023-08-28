@@ -39,7 +39,9 @@ app.get('/fruits', (req, res)=>{
 app.get('/fruits/:indexOfFruitsArray', (req, res)=>{
     // const index = req.params.indexOfFruitsArray
     // res.send(fruits[index])
-    res.render('Show')
+    res.render('Show', {
+        fruit: fruits[req.params.indexOfFruitsArray]
+    })
 })
 
 
