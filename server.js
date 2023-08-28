@@ -11,6 +11,19 @@ const jsxEngine = require('jsx-view-engine')
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
 
+app.use((req, res, next)=> {
+    console.log('I run for all routes')
+    next()
+})
+
+
+
+
+
+
+
+
+
 app.get('/', (req, res) =>{
     res.send(fruits)
 })
@@ -33,7 +46,7 @@ app.get('/fruits', (req, res)=>{
 /**
  * @path /fruits/new
  * @method GET
- * @action show 
+ * @action create 
  * @description show form to create new fruit
  */
 
@@ -43,7 +56,17 @@ app.get('/fruits/new', (req, res)=> {
 
 
 
+//create
+/**
+ * @path /fruits
+ * @method POST
+ * @action create 
+ * @description create new fruit and redirect user
+ */
 
+app.post('/fruits', (req, res)=>{
+    res.send("Got some data!")
+})
 
 
 
