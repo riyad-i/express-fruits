@@ -28,6 +28,32 @@ app.get('/fruits', (req, res)=>{
 })
 
 
+
+//create
+/**
+ * @path /fruits/new
+ * @method GET
+ * @action show 
+ * @description show form to create new fruit
+ */
+
+app.get('/fruits/new', (req, res)=> {
+    res.render("New")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //show
 /**
  * @path /fruits/indexOfFruitArray
