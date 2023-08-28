@@ -70,8 +70,14 @@ app.get('/fruits/new', (req, res)=> {
  */
 
 app.post('/fruits', (req, res)=>{
+    if (req.body.readyToEat === 'on'){
+        req.body.readyToEat = true
+    } else {
+        req.body.readyToEat = false
+    }
+    fruits.push(req.body)
     console.log(req.body)
-    res.send("Got some data!")
+    res.redirect(`/fruits/`)
 })
 
 
