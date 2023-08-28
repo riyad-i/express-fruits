@@ -24,7 +24,7 @@ app.get('/', (req, res) =>{
  */
 //action :index
 app.get('/fruits', (req, res)=>{
-    res.send(fruits)
+    res.render('Index', {fruits})
 })
 
 
