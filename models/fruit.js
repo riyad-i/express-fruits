@@ -10,6 +10,6 @@ const fruitSchema = new mongoose.Schema({
         type : String ,
         required: true
     },
-    readyToEat : true
+    readyToEat : Boolean
     
 })
