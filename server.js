@@ -119,11 +119,16 @@ app.post('/fruits', async (req, res)=>{
  * @action show 
  * @description return a single fruit
  */
-app.get('/fruits/:indexOfFruitsArray', (req, res)=>{
-    // const index = req.params.indexOfFruitsArray
+app.get('/fruits/:id', async (req, res)=>{
+    // const index = req.params.id
     // res.send(fruits[index])
+
+    const {id} = req.params
+
+    const fruit = await Fruit.findById(id)
+    console.log('Found Fruit --> ', fruit);
     res.render('Show', {
-        fruit: fruits[req.params.indexOfFruitsArray]
+        fruit: fruit
     })
 })
 
