@@ -11,6 +11,7 @@ const jsxEngine = require('jsx-view-engine')
 
 require('dotenv').config()
 
+const mongoose = require('mongoose')
 
 
 //app config
@@ -109,6 +110,17 @@ app.get('/fruits/:indexOfFruitsArray', (req, res)=>{
         fruit: fruits[req.params.indexOfFruitsArray]
     })
 })
+
+
+
+//Connect to database
+mongoose.connect(process.env.MONGO_URI)
+//test connection
+mongoose.connection.once('open', ()=> {
+    console.log('connected to mongo')
+})
+
+
 
 
 
