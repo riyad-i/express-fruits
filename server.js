@@ -48,8 +48,15 @@ app.get('/', (req, res) =>{
  * @description returns a list of fruits
  */
 //action :index
-app.get('/fruits', (req, res)=>{
-    res.render('Index', {fruits})
+app.get('/fruits', async (req, res)=>{
+    // res.render('Index', {fruits})
+
+    //query fruits from db
+    const fruitsFromDB = await Fruit.find({})
+    console.log(fruitsFromDB);
+    res.render('Index', {
+        fruits: fruitsFromDB
+    })
 })
 
 
