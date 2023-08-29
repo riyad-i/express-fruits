@@ -12,6 +12,7 @@ const jsxEngine = require('jsx-view-engine')
 require('dotenv').config()
 
 const mongoose = require('mongoose')
+const Fruit = require('./models/fruit.js')
 
 
 //app config
@@ -75,15 +76,23 @@ app.get('/fruits/new', (req, res)=> {
  * @description create new fruit and redirect user
  */
 
-app.post('/fruits', (req, res)=>{
+app.post('/fruits', async (req, res)=>{
     if (req.body.readyToEat === 'on'){
         req.body.readyToEat = true
     } else {
         req.body.readyToEat = false
     }
-    fruits.push(req.body)
-    console.log(req.body)
+    // fruits.push(req.body)
+    // console.log(req.body)
+    try {
+        const createdFruit = await Fruit.create(req.body)
+        console.log(createdFruit);
+    } catch (error) {
+        console.log(error);
+    }
     res.redirect(`/fruits/`)
+
+
 })
 
 
