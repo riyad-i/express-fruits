@@ -8,6 +8,11 @@ const fruits = require('./models/fruits')
 
 const jsxEngine = require('jsx-view-engine')
 
+
+require('dotenv').config()
+
+
+
 //app config
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
