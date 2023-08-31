@@ -7,7 +7,7 @@ function Show (props){
         <main>
             <h1>Show Page</h1>
             <h2>The {fruit.name} is {fruit.color}</h2>
-            <p>{fruit.readyToEat? "It's is ready to eat" : "It is not ready to eat... Can't touch this" }</p>
+            <p>{fruit.readyToEat? "It is ready to eat" : "It is not ready to eat" }</p>
         </main>
     )
 }
